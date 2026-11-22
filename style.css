@@ -120,6 +120,69 @@ button:hover {
     margin-top: 1.25rem;
 }
 
+.hash-form {
+    margin-top: 1.5rem;
+}
+
+#hash-result {
+    margin-top: 1.25rem;
+}
+
+.hash-info {
+    margin-top: 1.5rem;
+    border: 1px solid #d0d5dd;
+    border-radius: 0.5rem;
+    background: #f8f9fc;
+}
+
+.hash-info summary {
+    padding: 0.85rem 1rem;
+    color: #4338ca;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hash-info summary:focus-visible {
+    outline: 3px solid #c7d7fe;
+    outline-offset: 2px;
+}
+
+.hash-info-content {
+    padding: 0 1rem 1rem;
+}
+
+.hash-info-content > p {
+    color: #667085;
+    line-height: 1.5;
+}
+
+.cipher-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.cipher-card {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e1e6ef;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.cipher-card h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+}
+
+.cipher-card p {
+    margin: 0;
+    color: #667085;
+    line-height: 1.5;
+}
+
+.status-message {
+    color: #b42318;
+}
+
 @media (max-width: 520px) {
     .site-header {
         align-items: flex-start;

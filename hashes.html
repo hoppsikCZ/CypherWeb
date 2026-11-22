@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="site-title" href="index.html">Cypher Web</a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Transformer</a>
+                <a href="hashes.html" aria-current="page">Hash tools</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Text hash generator</h1>
+            <p>Generate a one-way digest from text with the browser's built-in Web Crypto API. Hashes cannot be decrypted.</p>
+            
+            <form id="hash-form" class="hash-form">
+                <label for="algorithm">Algorithm
+                    <select id="algorithm" name="algorithm">
+                        <option value="SHA-1">SHA-1 (legacy)</option>
+                        <option value="SHA-256">SHA-256</option>
+                        <option value="SHA-384">SHA-384</option>
+                        <option value="SHA-512">SHA-512</option>
+                    </select>
+                </label>
+
+                <label class="text-field" for="hash-input">Text to hash
+                    <textarea id="hash-input" name="input" placeholder="Type or paste text here..."></textarea>
+                </label>
+
+                <button type="submit">Generate hash</button>
+
+                <label id="hash-result" for="hash-output">Hash result
+                    <textarea id="hash-output" name="output" readonly placeholder="Your hash will appear here."></textarea>
+                </label>
+                <p id="hash-status" class="status-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <details class="hash-info">
+                <summary>About these hash functions</summary>
+                <div class="hash-info-content">
+                    <section class="cipher-list" aria-label="Hash algorithm information">
+                        <article class="cipher-card">
+                            <h2>SHA-256</h2>
+                            <p>A widely used member of the SHA-2 family, suitable for integrity checks. Passwords should use a dedicated password-hashing algorithm instead.</p>
+                        </article>
+                        <article class="cipher-card">
+                            <h2>SHA-384 and SHA-512</h2>
+                            <p>Two other SHA-2 variants that produce longer digests. SHA-512 has the largest output of the algorithms offered here.</p>
+                        </article>
+                        <article class="cipher-card">
+                            <h2>SHA-1</h2>
+                            <p>An older hash with known collision weaknesses. Included for compatibility only; do not use it for security.</p>
+                        </article>
+                    </section>
+                </div>
+            </details>
+        </main>
+    </div>
+
+    <script src="hashes.js"></script>
+</body>
+</html>
