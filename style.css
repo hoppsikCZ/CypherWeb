@@ -17,6 +17,10 @@ body {
     width: min(100%, 680px);
 }
 
+.page-shell.guide-page {
+    width: min(100%, 900px);
+}
+
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -40,6 +44,10 @@ body {
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
     background: #e9eaff;
+}
+
+.site-header nav a[aria-current="page"] {
+    background: #d7d9ff;
 }
 
 main {
@@ -173,6 +181,117 @@ button:hover {
     font-size: 1rem;
 }
 
+.guide-section {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.guide-section > h2 {
+    margin: 0;
+}
+
+.guide-section > p {
+    margin: 0;
+    color: #667085;
+    line-height: 1.6;
+}
+
+.guide-section .cipher-card h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+}
+
+.guide-section .cipher-card p + p {
+    margin-top: 0.75rem;
+}
+
+.guide-link {
+    color: #4338ca;
+    font-weight: 600;
+}
+
+.guide-main {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.guide-hero {
+    padding: 1.5rem;
+    border: 1px solid #e1e6ef;
+    border-radius: 0.75rem;
+    background: #fff;
+}
+
+.guide-hero h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.guide-hero > p:not(.guide-kicker) {
+    max-width: 65ch;
+    margin: 0.75rem 0 0;
+    color: #667085;
+    line-height: 1.6;
+}
+
+.guide-kicker {
+    margin: 0;
+    color: #667085;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.guide-path {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    color: #667085;
+    font-size: 0.85rem;
+}
+
+.guide-main .guide-section {
+    margin: 0;
+    padding: 1.5rem;
+    border: 1px solid #e1e6ef;
+    border-radius: 0.75rem;
+    background: #fff;
+}
+
+.guide-section > h2 {
+    font-size: 1.4rem;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 0.75rem;
+}
+
+.guide-card {
+    background: #fafbfc;
+}
+
+.guide-card h3 {
+    color: #172033;
+}
+
+.guide-main .guide-link {
+    justify-self: start;
+    margin-top: 0.25rem;
+    color: #4338ca;
+    text-decoration: none;
+}
+
+.guide-main .guide-link:hover {
+    text-decoration: underline;
+}
+
 .cipher-card p {
     margin: 0;
     color: #667085;
@@ -196,5 +315,9 @@ button:hover {
 
     main {
         padding: 1.5rem;
+    }
+
+    .guide-main {
+        padding: 0;
     }
 }

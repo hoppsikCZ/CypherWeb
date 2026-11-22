@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciphers and hashes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell guide-page">
+        <header class="site-header">
+            <a class="site-title" href="index.html">Cypher Web</a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Transformer</a>
+                <a href="hashes.html">Hash tools</a>
+                <a href="guide.html" aria-current="page">Overview</a>
+            </nav>
+        </header>
+
+        <main class="guide-main">
+            <section class="guide-hero" aria-labelledby="guide-title">
+                <p class="guide-kicker">A quick field guide</p>
+                <h1 id="guide-title">Secret messages, explained</h1>
+                <p>Explore the playful history of ciphers and the one-way world of hashes. Learn what each tool does, where it falls short, and try the transformations yourself.</p>
+                <div class="guide-path" aria-label="Guide topics">
+                    <span>Substitute</span><span aria-hidden="true">→</span>
+                    <span>Rearrange</span><span aria-hidden="true">→</span>
+                    <span>Fingerprint</span>
+                </div>
+            </section>
+
+            <section class="guide-section" aria-labelledby="cipher-guide-heading">
+                <p class="guide-kicker">01 / Reversible transformations</p>
+                <h2 id="cipher-guide-heading">What is a cipher?</h2>
+                <p>A cipher transforms a message using a rule, often controlled by a key. The intended reader uses the rule and key to reverse it. These classic examples work with English letters and preserve other characters such as spaces and punctuation.</p>
+
+                <div class="guide-grid">
+                <article class="cipher-card guide-card">
+                    <h3>Caesar cipher</h3>
+                    <p>The Caesar cipher shifts every letter by the same number of positions in the alphabet, wrapping from Z back to A. For example, a shift of 3 changes <code>HELLO</code> to <code>KHOOR</code>. To decode, shift by the same amount in the opposite direction.</p>
+                    <p>There are only 26 possible shifts, so trying each one quickly reveals the original message. It is useful for demonstrating substitution, not for protecting sensitive information.</p>
+                </article>
+
+                <article class="cipher-card guide-card">
+                    <h3>ROT13</h3>
+                    <p>ROT13 is a Caesar cipher with a fixed shift of 13. Since the English alphabet has 26 letters, applying ROT13 twice returns the original text. The same operation encodes and decodes.</p>
+                    <p>It can obscure text from a quick glance, but provides no secrecy: anyone can reverse it immediately.</p>
+                </article>
+
+                <article class="cipher-card guide-card">
+                    <h3>Atbash</h3>
+                    <p>Atbash replaces each letter with its opposite in the alphabet: A becomes Z, B becomes Y, and M becomes N. This mapping reverses itself, so applying it a second time restores the original.</p>
+                    <p>Atbash has no key and is easy to reverse. It is a historical substitution method, not modern encryption.</p>
+                </article>
+                <article class="cipher-card guide-card">
+                    <h3>Vigenère cipher</h3>
+                    <p>The Vigenère cipher uses a repeating keyword to shift each letter by a different amount. With the key <code>LEMON</code>, <code>ATTACK</code> becomes <code>LXFOPV</code>. The keyword determines the sequence of shifts.</p>
+                    <p>It is more involved than a single Caesar shift, but repeated keys and patterns can still reveal the message. It is not secure by modern standards.</p>
+                </article>
+                <article class="cipher-card guide-card">
+                    <h3>Rail Fence cipher</h3>
+                    <p>This transposition cipher writes the message diagonally across a chosen number of rows (rails), then reads each row in turn. With 3 rails, the letters zigzag down and back up before being read row by row.</p>
+                    <p>It rearranges letters rather than replacing them. The rail count is the key, but the small number of possible arrangements makes it unsuitable for real secrecy.</p>
+                </article>
+                </div>
+
+                <a class="guide-link" href="index.html">Try all five ciphers <span aria-hidden="true">→</span></a>
+            </section>
+
+            <section class="guide-section" aria-labelledby="hash-guide-heading">
+                <p class="guide-kicker">02 / One-way fingerprints</p>
+                <h2 id="hash-guide-heading">What is a hash?</h2>
+                <p>A hash function turns data of any length into a fixed-size digest—a kind of digital fingerprint. The same input always produces the same digest, and even a tiny change to the input produces a very different result.</p>
+                <p>Unlike a cipher, hashing is one-way: there is no key to decrypt a digest back into its original message. Hashes can help check data integrity, but plain hashes are not suitable for storing passwords.</p>
+
+                <div class="guide-grid">
+                <article class="cipher-card guide-card">
+                    <h3>SHA-256</h3>
+                    <p>A member of the SHA-2 family that produces a 256-bit (32-byte) digest. It is widely used for integrity and digital-signature systems. It is not a password-hashing function by itself.</p>
+                </article>
+
+                <article class="cipher-card guide-card">
+                    <h3>SHA-384</h3>
+                    <p>Another SHA-2 function with a 384-bit (48-byte) digest. It uses the SHA-512 family design with a shorter output.</p>
+                </article>
+
+                <article class="cipher-card guide-card">
+                    <h3>SHA-512</h3>
+                    <p>A SHA-2 function that produces a 512-bit (64-byte) digest. The longer output does not make it interchangeable with a password-hashing scheme.</p>
+                </article>
+
+                <article class="cipher-card guide-card">
+                    <h3>SHA-1</h3>
+                    <p>SHA-1 produces a 160-bit (20-byte) digest, but practical collision attacks are known. It is included for legacy compatibility only and should not be chosen for new security-sensitive uses.</p>
+                </article>
+
+                <article class="cipher-card guide-card">
+                    <h3>MD5</h3>
+                    <p>MD5 produces a 128-bit (16-byte) digest. Practical collision attacks make it unsuitable for security, including verifying authenticity or protecting passwords. It is sometimes encountered in legacy systems and non-security checks.</p>
+                </article>
+                </div>
+
+                <p>For password storage, use a dedicated, deliberately slow password-hashing algorithm with a unique salt, such as Argon2id, scrypt, or bcrypt. Never store passwords as plain SHA digests.</p>
+                <a class="guide-link" href="hashes.html">Make a hash <span aria-hidden="true">→</span></a>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
