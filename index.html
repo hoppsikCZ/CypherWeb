@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypher Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="site-title" href="index.html">Cypher Web</a>
+            <nav aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Transformer</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Text transformer</h1>
+            <p>Encode or decode a message with a classic cipher.</p>
+
+            <form id="cipher-form">
+                <div class="options">
+                    <label for="cipher">Cipher
+                        <select id="cipher" name="cipher">
+                            <option value="caesar">Caesar</option>
+                            <option value="rot13">ROT13</option>
+                            <option value="atbash">Atbash</option>
+                        </select>
+                    </label>
+                    <label for="action">Action
+                        <select id="action" name="action">
+                            <option value="encode">Encode</option>
+                            <option value="decode">Decode</option>
+                        </select>
+                    </label>
+                    <div id="shift-option">
+                        <label for="shift">Shift
+                            <input id="shift" name="shift" type="number" min="0" max="25" step="1" value="3">
+                        </label>
+                    </div>
+                </div>
+
+                <label class="text-field" for="message">Your message
+                    <textarea id="message" name="message" placeholder="Type or paste your text here..." required></textarea>
+                </label>
+
+                <button type="submit">Transform text</button>
+
+                <label id="result" for="output">Result
+                    <textarea id="output" name="output" readonly placeholder="Your transformed text will appear here."></textarea>
+                </label>
+            </form>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

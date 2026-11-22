@@ -1,2 +1,3 @@
 # CypherWeb
-Small website that let's you try out multiple cyphers.
+
+A small website for trying classic ciphers.
