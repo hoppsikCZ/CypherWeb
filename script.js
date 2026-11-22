@@ -26,9 +26,13 @@ function transform(text, cipher, shift, action) {
 
 function updateOptions() {
     const isCaesar = cipherSelect.value === "caesar";
+    const usesSameOperationToDecode = cipherSelect.value === "rot13" || cipherSelect.value === "atbash";
     shiftInput.disabled = !isCaesar;
     shiftOption.hidden = !isCaesar;
-    actionSelect.disabled = cipherSelect.value === "atbash";
+    actionSelect.disabled = usesSameOperationToDecode;
+    if (usesSameOperationToDecode) {
+        actionSelect.value = "encode";
+    }
 }
 
 cipherSelect.addEventListener("change", updateOptions);
