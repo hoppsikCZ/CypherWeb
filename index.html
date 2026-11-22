@@ -52,6 +52,27 @@
                     <textarea id="output" name="output" readonly placeholder="Your transformed text will appear here."></textarea>
                 </label>
             </form>
+
+            <details class="hash-info">
+                <summary>About these ciphers</summary>
+                <div class="hash-info-content">
+                    <section class="cipher-list" aria-label="Cipher information">
+                        <article class="cipher-card">
+                            <h2>Caesar</h2>
+                            <p>Shifts each letter by a chosen number of places in the alphabet. With a shift of 3, HELLO becomes KHOOR. Decoding shifts the letters back.</p>
+                        </article>
+                        <article class="cipher-card">
+                            <h2>ROT13</h2>
+                            <p>A Caesar cipher with a fixed shift of 13. Applying ROT13 twice returns the original text, so the same operation encodes and decodes.</p>
+                        </article>
+                        <article class="cipher-card">
+                            <h2>Atbash</h2>
+                            <p>Replaces each letter with its opposite in the alphabet: A becomes Z, B becomes Y, and so on. Applying it again reverses the transformation.</p>
+                        </article>
+                    </section>
+                    <p>These classic ciphers are useful for learning, but they do not provide real security.</p>
+                </div>
+            </details>
         </main>
     </div>
 
